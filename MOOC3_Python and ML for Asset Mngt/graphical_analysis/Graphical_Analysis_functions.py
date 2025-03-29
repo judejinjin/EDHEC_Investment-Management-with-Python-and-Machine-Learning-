@@ -339,10 +339,10 @@ def graphicalAnalysis_plot(d, partial_correlations, my_colors,
                            edgecolor=plt.cm.nipy_spectral(label / float(n_labels)),
                            alpha=.6))
 
-    plt.xlim(embedding[0].min() - .15 * embedding[0].ptp(),
-             embedding[0].max() + .10 * embedding[0].ptp(),)
-    plt.ylim(embedding[1].min() - .03 * embedding[1].ptp(),
-             embedding[1].max() + .03 * embedding[1].ptp())
+    plt.xlim(embedding[0].min() - .15 * np.ptp(embedding[0]),
+             embedding[0].max() + .10 * np.ptp(embedding[0]))
+    plt.ylim(embedding[1].min() - .03 * np.ptp(embedding[1]),
+             embedding[1].max() + .03 * np.ptp(embedding[1]))
     plt.title(title)
     plt.show()
 # END of function graphicalAnalysis_plot
